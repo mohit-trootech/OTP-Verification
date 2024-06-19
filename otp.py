@@ -66,6 +66,7 @@ class OTP(DatabaseOtp):
                         print(f"You are Left With {tries} Tries Try Again")
             except ValueError:
                 tries -= 1
+                print(f"You are Left With {tries} Tries Try Again")
                 print("Try Entering a Numeric OTP Received")
                 self.status_update(otp_data, constant.STATUS_FAILED)
             except Exception as e:
@@ -81,8 +82,8 @@ class OtpSend(OTP):
         try:
             self.validate_number(self.receiver_number)
             otp = self.generate_otp()
-            self.create_otp_entry(self.receiver_number, otp)
             if self.send_otp(self.receiver_number, otp):
+                self.create_otp_entry(self.receiver_number, otp)
                 self.validate_otp(self.receiver_number)
         except Exception as e:
             print(constant.UNKNOWN_ERROR, e)
