@@ -65,6 +65,6 @@ class DatabaseOtp:
 
 if __name__ == "__main__":
     obj = DatabaseOtp()
-    x = obj.get_last_otp_data(7240441409)
+    x = obj.get_last_otp_data(constant.TEST_NUMBER)
     obj.status_update(x, constant.STATUS_SUCCESS)
 
