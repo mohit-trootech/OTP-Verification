@@ -1,23 +1,20 @@
 
 # OTP Validation Python
 
-API, Database & Class Implementation Python Project to Validate OTP Real Time Send and Validation & Updates Database for the Same Status.
-
-- Takes Number input from User and Validates the Number based on criteria ie. Number Must be 10 Digit & all integer values.
-- then, OTP will generated using random module of python
-- then, 'Vonage API' is used to send OTP, if OTP sends successfully return True else False.
-- if True, then create a entry for OTP details in Database, and execute validate otp method.
-- Validation of OTP is based on following Criteria ie. OTP must be entered within 60 seconds, OTP must be six digit integer value, OTP must be entered in 5 Tries.
-- If Validation passed following criteria then Validate OTP and Update status for same as Success.
-- Else Throw error Message for same, and update database entry for Failed.
-
+This Python project will verify, dispatch, and update the status of one-time passwords (OTPs) in real time. 
+- Initially, the user submits a mobile number, and the project verifies that the number is 10 digits in length and comprises only integer values.
+- An OTP is then generated using Python's random module, and the Vonage API is employed to transmit the OTP. 
+- Upon successful transmission of the OTP, an entry is created in the database to record the OTP details, and the OTP validation procedure is commenced. 
+- Validation of the OTP is contingent upon the fulfillment of several conditions: the OTP must be entered within 60 seconds, must consist of six integer digits, and must be attempted no more than five times. 
+- If the OTP satisfies all of these criteria, it is deemed valid, and its status is updated to "Success." 
+-Otherwise, an error message is displayed, and the database entry is modified to "Failed."
 
 
 
 ## Documentation Reference
 
  - [Vonage Developer](https://www.vonage.com/developer-center/)
- - [GitHub README](https://github.com/mohit-trootech/Lyrics-Fetch-DB)
+ - [GitHub README](https://github.com/mohit-trootech/OTP-Verification)
 
 ## Installation
 
@@ -26,8 +23,8 @@ _**Prerequisite: Install Python into Your System, Install Required Libraries ie.
 - Install my-project with git clone
 
 ```
-  git clone https://github.com/mohit-trootech/Lyrics-Fetch-DB
-  cd Lyrics-Fetch-DB
+  git clone https://github.com/mohit-trootech/OTP-Verification
+  cd OTP-Verification
 ```
     
 - Vonage Server SDK
@@ -43,9 +40,7 @@ pip install vonage
 ```
   touch constants.py
 
-
-**Read Documentation to Generate Api Key & Secret
-  Create Reference Constants Variables for Error Free Execution**
+[//]: # ( _Read Documentation to Generate Api Key & Secret Create Reference Constants Variables for Error Free Execution_ )
 ```
 
 - Run Python Files
