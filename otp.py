@@ -4,8 +4,12 @@ import random
 import vonage
 import constant
 from datetime import datetime
+from dotenv import dotenv_values
 from otp_database import DatabaseOtp
 from utils import MobileNumberMisMatch, time_difference
+
+# Environment Configuration
+config = dotenv_values(".env")
 
 
 class OTP(DatabaseOtp):
@@ -94,7 +98,7 @@ class OtpSend(OTP):
         @param otp: str
         @return: bool
         """
-        client = vonage.Client(key=constant.API_KEY_SMS, secret=constant.API_SECRET)
+        client = vonage.Client(key=config.get("API_KEY_SMS"), secret=config.get("API_SECRET"))
         sms = vonage.Sms(client)
         response_data = sms.send_message(
             {
